@@ -440,6 +440,11 @@ namespace VeraCrypt
 			args.push_back ("allow_other");
 		}
 
+		args.push_back ("-o");
+		args.push_back ("iosize=33554432");
+		args.push_back ("-o");
+		args.push_back ("blocksize=131072");
+
 		ExecFunctor execFunctor (openVolume, slotNumber);
 		Process::Execute ("fuse", args, -1, &execFunctor);
 
